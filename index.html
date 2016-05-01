@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="choix">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+    <title>choix services</title>
+</head>
+<body ng-controller="myCtrl">
+	<section>
+		<div>
+			<h1 class="title">Services</h1>
+		</div>
+		<div class="cont1">
+			<p class="text1">Choisissez les éléments à inclure</p>
+			<p class="text1">{{chiffre}} services séléctionnés</p>
+		</div>
+		<button class="cont-info" class ="container_services" ng-repeat="element in services" ng-click="price()"  ng-class="{'active': element.active}">
+			<p class="text-info">{{element.name}}</p>
+			<p class="text-info" id="text2">{{element.price | currency:"€"}}</p>
+		</button>
+		<div class="line"></div>
+		<div>
+			<p class="total">Total : {{total |currency:"€"}} </p>
+			<p></p>
+		</div>
+	</section>
+
+</body>
+</html>
